@@ -4,10 +4,11 @@ namespace Maatwebsite\Excel\Readers;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Contracts\Bus\SelfHandling;
 use Maatwebsite\Excel\Filters\ChunkReadFilter;
 use SuperClosure\Serializer;
 
-class ChunkedReadJob implements ShouldQueue
+class ChunkedReadJob implements ShouldQueue, SelfHandling
 {
     use Queueable;
 
